@@ -8,4 +8,9 @@ public class Point {
 		this.y = y;
 		this.z = z;
 	}
+	
+	public void afficher(){
+		System.out.println("x : " + x + "y : " + y + " z :" + z);
+	}
+	
 }
