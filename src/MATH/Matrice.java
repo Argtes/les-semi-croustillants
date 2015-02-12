@@ -23,4 +23,15 @@ public class Matrice {
 		}
 	}
 	
+	public String toString(){
+		String s = "";
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				s += matrice[i][j] + " ";
+			}
+			s += "\n";
+		}
+		return s;
+	}
+	
 }
