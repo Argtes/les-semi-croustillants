@@ -19,18 +19,22 @@ public class GtsLoad {
 			InputStreamReader ipsr = new InputStreamReader(ips);
 			BufferedReader br = new BufferedReader(ipsr);
 			String[] tmp;
-			while (true/*br.readLine().split(" ")vérifier que on a 3 éléments*/) {
+			int i = 0;
+			String s;
+			while ((s = br.readLine()) != null && compteurDeMot(s) == 3) {
 				tmp =  br.readLine().split(" ");
-				Sommet.add(new Sommet(Float.parseFloat(tmp[0]), Float.parseFloat(tmp[1]), Float.parseFloat(tmp[2])));
-			}
-			while (true /*  vérifier qu'il n'y a que 2 element*/) {
-				tmp =  br.readLine().split(" ");
-				
+				Sommet.add(new Sommet(Float.parseFloat(tmp[0]), Float.parseFloat(tmp[1]), Float.parseFloat(tmp[2]), i));
+				i++;
 			}
 			br.close();
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
+	}
+	
+	public int compteurDeMot(String s){
+		String[] i = s.split(" ");
+		return i.length;
 	}
 
 }
