@@ -18,7 +18,9 @@ public class GtsLoad {
 			InputStream ips = new FileInputStream(fichier);
 			InputStreamReader ipsr = new InputStreamReader(ips);
 			BufferedReader br = new BufferedReader(ipsr);
-			while (!(br.readLine()).equals("#Sommet")) {
+			String[] tmp;
+			while (true/*br.readLine().split(" ")vérifier que on a 3 éléments*/) {
+				tmp =  br.readLine().split(" ");
 				
 			}
 			br.close();
