@@ -21,6 +21,10 @@ public class GtsLoad {
 			String[] tmp;
 			while (true/*br.readLine().split(" ")vérifier que on a 3 éléments*/) {
 				tmp =  br.readLine().split(" ");
+				Sommet.add(new Sommet(Float.parseFloat(tmp[0]), Float.parseFloat(tmp[1]), Float.parseFloat(tmp[2])));
+			}
+			while (true /*  vérifier qu'il n'y a que 2 element*/) {
+				tmp =  br.readLine().split(" ");
 				
 			}
 			br.close();
