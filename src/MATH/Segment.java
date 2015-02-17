@@ -1,18 +1,18 @@
 package MATH;
 
 public class Segment {
-	private Sommet s1, s2;
+	private int s1, s2;
 	
-	public Segment(Sommet s1, Sommet s2){
+	public Segment(int s1, int s2){
 		this.s1 = s1;
 		this.s2 = s2;
 	}
 
-	public Sommet getP1() {
+	public int getP1() {
 		return s1;
 	}
 
-	public Sommet getP2() {
+	public int getP2() {
 		return s2;
 	}
 	
