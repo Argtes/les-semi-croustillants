@@ -19,6 +19,7 @@ public class GtsLoad {
 			InputStreamReader ipsr = new InputStreamReader(ips);
 			BufferedReader br = new BufferedReader(ipsr);
 			String[] tmp;
+<<<<<<< HEAD
 			while (true/*br.readLine().split(" ")vérifier que on a 3 éléments pour le sommet*/) {
 				tmp =  br.readLine().split(" ");
 				Sommet.add(new Sommet(Float.parseFloat(tmp[0]), Float.parseFloat(tmp[1]), Float.parseFloat(tmp[2])));
@@ -26,11 +27,24 @@ public class GtsLoad {
 			while (true /*  vérifier qu'il n'y a que 2 element pour les arretes*/) {
 				tmp =  br.readLine().split(" ");
 				
+=======
+			int i = 0;
+			String s;
+			while ((s = br.readLine()) != null && compteurDeMot(s) == 3) {
+				tmp =  br.readLine().split(" ");
+				Sommet.add(new Sommet(Float.parseFloat(tmp[0]), Float.parseFloat(tmp[1]), Float.parseFloat(tmp[2]), i));
+				i++;
+>>>>>>> 1daf3fba91a9b151e39eff110a3a90198ad07d5d
 			}
 			br.close();
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
+	}
+	
+	public int compteurDeMot(String s){
+		String[] i = s.split(" ");
+		return i.length;
 	}
 
 }
