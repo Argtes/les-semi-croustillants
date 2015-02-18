@@ -32,7 +32,7 @@ public class Matrice {
 		String s = "";
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
-				s += matrice[i][j] + " ";
+				s += matrice[i][j] + " | ";
 			}
 			s += "\n";
 		}
@@ -56,43 +56,43 @@ public class Matrice {
 	}
 
 	public float[][] multiplier(Matrice m1) {
-		int x1=m1.sizeV();
-		int x2=x;
-		int y1=m1.sizeH();
-		int y2=y;
+		int x1 = m1.sizeV();
+		int x2 = x;
+		int y1 = m1.sizeH();
+		int y2 = y;
 		Matrice res = null;
-		if(x2==y1){
-			res = new Matrice(y2,x1);
+		if (x2 == y1) {
+			res = new Matrice(y2, x1);
 			float tempo;
-			for (int i = 0; i <x1 ; i++) {
-				tempo = 0;
-				for (int j = 0; j < 3; j++) {
+			for (int i = 0; i < x1; i++) {
+				for (int j = 0; j < y2; j++) {
+					tempo = 0;
 					for (int cpt = 0; cpt < 3; cpt++) {
-						tempo = (m1.get(i, j) * matrice[j][i]);
+						tempo = tempo + (matrice[j][cpt] * m1.get(cpt, i));
 					}
 					res.set(i, j, tempo);
 				}
 			}
 		}
-		for(int i=0; i<y;i++){
-			for(int j=0; i<x; i++){
-				matrice[j][i]=res.get(j, i);
+		for (int i = 0; i < y; i++) {
+			for (int j = 0; i < x; i++) {
+				matrice[j][i] = res.get(j, i);
 			}
 		}
 		return matrice;
-	
-	}
-public static void main(String[] args) {
-	Matrice ok = new Matrice(3, 3);
-	System.out.println(ok.toString());
-	Matrice ok1 = new Matrice(3, 3);
-	System.out.println();
-	System.out.println(ok1.toString());
-	ok.multiplier(ok1);
-	System.out.println();
-	System.out.println();
-	System.out.println(ok);
-}
 
+	}
+
+	public static void main(String[] args) {
+		Matrice ok = new Matrice(3, 3);
+		System.out.println(ok.toString());
+		Matrice ok1 = new Matrice(3, 3);
+		System.out.println();
+		System.out.println(ok1.toString());
+		ok.multiplier(ok1);
+		System.out.println();
+		System.out.println();
+		System.out.println(ok);
+	}
 
 }
