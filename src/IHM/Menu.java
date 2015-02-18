@@ -20,7 +20,7 @@ public class Menu {
 		panelImage = new JPanel();
 		panelFichier = new JPanel();
 
-		fenetre.setPreferredSize(new Dimension(1000, 750));
+		fenetre.setPreferredSize(new Dimension(1000, 650));
 
 		JMenuBar menu_bar1 = new JMenuBar();
 		menu_bar1.setPreferredSize(new Dimension(200, 50));
