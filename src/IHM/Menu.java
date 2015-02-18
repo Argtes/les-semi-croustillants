@@ -1,15 +1,12 @@
 package IHM;
 
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.KeyStroke;
 
 public class Menu {
 	JFrame fenetre;
@@ -17,33 +14,34 @@ public class Menu {
 	JMenu barreMenu;
 	JMenuBar barre;
 	JMenuItem item;
-	
-	
+
 	public Menu() {
 		fenetre = new JFrame("les semi croustillants");
 		panelImage = new JPanel();
 		panelFichier = new JPanel();
-		barre = new JMenuBar();//recoit le Menu
-		barreMenu = new JMenu();//Menu
-		item = new JMenuItem("Hello");//item
-		barre.setBounds(0, 0, 200, 20);
-		
-		
+
 		fenetre.setPreferredSize(new Dimension(1000, 750));
+
+		JMenuBar menu_bar1 = new JMenuBar();
+		menu_bar1.setPreferredSize(new Dimension(200, 50));
+		/* différents menus */
+		JMenu menu1 = new JMenu("Fichier");
+		menu1.setPreferredSize(new Dimension(100, 2));
+		/* differents choix de chaque menu */
+		JMenuItem demarrer = new JMenuItem("Démarrer");
+		JMenuItem fin = new JMenuItem("Fin");
+
+		/* Ajouter les choix au menu */
+		menu1.add(demarrer);
+		menu1.add(fin);
 		
-		item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
-		item.getAccessibleContext().setAccessibleDescription("hellllllo");
-		
-		barreMenu.add(item);
+		/* Ajouter les menu sur la bar de menu */
+		menu_bar1.add(menu1);
 		
 		
-		barre.add(barreMenu);
+		/* Ajouter la bar du menu à la frame */
+		fenetre.add(menu_bar1);
 		
-		
-		fenetre.add(barreMenu);
-		fenetre.setJMenuBar(barre);
-		fenetre.add(panelImage);
-		fenetre.add(panelFichier);
 		fenetre.pack();
 		fenetre.setLocationRelativeTo(null);
 		fenetre.setResizable(false);
