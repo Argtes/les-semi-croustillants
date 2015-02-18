@@ -19,11 +19,11 @@ public class GtsLoad {
 			InputStreamReader ipsr = new InputStreamReader(ips);
 			BufferedReader br = new BufferedReader(ipsr);
 			String[] tmp;
-			while (true/*br.readLine().split(" ")vérifier que on a 3 éléments*/) {
+			while (true/*br.readLine().split(" ")vérifier que on a 3 éléments pour le sommet*/) {
 				tmp =  br.readLine().split(" ");
 				Sommet.add(new Sommet(Float.parseFloat(tmp[0]), Float.parseFloat(tmp[1]), Float.parseFloat(tmp[2])));
 			}
-			while (true /*  vérifier qu'il n'y a que 2 element*/) {
+			while (true /*  vérifier qu'il n'y a que 2 element pour les arretes*/) {
 				tmp =  br.readLine().split(" ");
 				
 			}
