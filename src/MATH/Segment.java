@@ -1,19 +1,23 @@
 package MATH;
 
 public class Segment {
-	private int s1, s2;
+	private Sommet s1, s2;
 	
-	public Segment(int s1, int s2){
+	public Segment(Sommet s1, Sommet s2){
 		this.s1 = s1;
 		this.s2 = s2;
 	}
 
-	public int getP1() {
+	public Sommet getP1() {
 		return s1;
 	}
 
-	public int getP2() {
+	public Sommet getP2() {
 		return s2;
 	}
 	
+	public Sommet[] getSommet(){
+		Sommet[] tab = {s1, s2};
+		return tab;
+	}
 }

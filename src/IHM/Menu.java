@@ -24,9 +24,11 @@ public class Menu {
 
 		JMenuBar menu_bar1 = new JMenuBar();
 		menu_bar1.setPreferredSize(new Dimension(200, 50));
+
 		/* différents menus */
 		JMenu menu1 = new JMenu("Fichier");
 		menu1.setPreferredSize(new Dimension(100, 2));
+
 		/* differents choix de chaque menu */
 		JMenuItem demarrer = new JMenuItem("Démarrer");
 		JMenuItem fin = new JMenuItem("Fin");
@@ -34,14 +36,13 @@ public class Menu {
 		/* Ajouter les choix au menu */
 		menu1.add(demarrer);
 		menu1.add(fin);
-		
+
 		/* Ajouter les menu sur la bar de menu */
 		menu_bar1.add(menu1);
-		
-		
+
 		/* Ajouter la bar du menu à la frame */
 		fenetre.add(menu_bar1);
-		
+
 		fenetre.pack();
 		fenetre.setLocationRelativeTo(null);
 		fenetre.setResizable(false);

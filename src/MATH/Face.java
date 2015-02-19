@@ -21,4 +21,8 @@ public class Face {
 		return s3;
 	}
 
+	public Segment[] getSegment(){
+		Segment[] tab = {s1, s2, s3};
+		return tab;
+	}
 }
