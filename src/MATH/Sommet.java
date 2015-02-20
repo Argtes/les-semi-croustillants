@@ -1,43 +1,33 @@
 package MATH;
 
 public class Sommet {
-	private float x, y, z;
-	private int nom;
+	private double x, y, z;
 
-	public Sommet(float x, float y, float z, int nom) {
+	public Sommet(double x, double y, double z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
-		this.nom = nom;
 	}
 
 	public String toString() {
 		return "x : " + x + " y : " + y + " z : " + z;
 	}
 
-	public float[] getSommet() {
-		float[] tab = { x, y, z };
+	public double[] getSommet() {
+		double[] tab = { x, y, z };
 		return tab;
 	}
 
-	public void setX(float x) {
+	public void setX(double x) {
 		this.x = x;
 	}
 
-	public void setY(float y) {
+	public void setY(double y) {
 		this.y = y;
 	}
 
-	public void setZ(float z) {
+	public void setZ(double z) {
 		this.z = z;
-	}
-	
-	public int getNom(){
-		return this.nom;
-	}
-	
-	public void Setnom(int nom){
-		this.nom = nom;
 	}
 	
 }
