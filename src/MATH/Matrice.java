@@ -27,6 +27,14 @@ public class Matrice {
 			matrice[i][i] = 1;
 	}
 	
+	
+	public Matrice(int k){
+		matrice = new float[k][k];
+		
+		for(int i = 0; i < k ; i++)
+			matrice[i][i] = 1;
+	}
+	
 	public Matrice(float[][] values){
 		matrice = values;
 	}
@@ -95,16 +103,12 @@ public class Matrice {
 
 	}
 	
-
 	public static void main(String[] args) {
 		Matrice ok = new Matrice(3, 3);
 		System.out.println(ok.toString());
 		Matrice ok1 = new Matrice(3, 3);
-		System.out.println();
 		System.out.println(ok1.toString());
 		ok.multiplier(ok1);
-		System.out.println();
-		System.out.println();
 		System.out.println(ok);
 	}
 	
