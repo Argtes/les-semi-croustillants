@@ -19,62 +19,16 @@ public class Matrice {
 			}
 		}
 	}
-	/**
-	 * constructeur matrice un - un
-	 */
-
-	public Matrice(float a){
-		matrice[0][0]=a;
+	
+	public Matrice(int k){
+		matrice = new float[k][k];
+		
+		for(int i = 0; i < k ; i++)
+			matrice[i][i] = 1;
 	}
 	
-	/**
-	 * constructeur matrice deux - deux
-	 */
-
-	public Matrice(float a, float b, float c, float d){
-		matrice[0][0]=a;
-		matrice[0][1]=b;
-		matrice[1][0]=c;
-		matrice[1][1]=d;
-	}
-	
-	/**
-	 * constructeur matrice trois - trois
-	 */
-
-	public Matrice(float a, float b, float c, float d, float e, float f, float g, float h, float i){
-		matrice[0][0]=a;
-		matrice[0][1]=b;
-		matrice[0][2]=c;
-		matrice[1][0]=d;
-		matrice[1][1]=e;
-		matrice[1][2]=f;
-		matrice[2][0]=g;
-		matrice[2][1]=h;
-		matrice[2][2]=i;
-	}
-	
-	/**
-	 * constructeur matrice quatre - quatre
-	 */
-
-	public Matrice(float a, float b, float c, float d, float e, float f, float g, float h, float i, float j, float k, float l, float m, float n, float o, float p){
-		matrice[0][0]=a;
-		matrice[0][1]=b;
-		matrice[0][2]=c;
-		matrice[0][3]=d;
-		matrice[1][0]=e;
-		matrice[1][1]=f;
-		matrice[1][2]=g;
-		matrice[1][3]=h;
-		matrice[2][0]=i;
-		matrice[2][1]=j;
-		matrice[2][2]=k;
-		matrice[2][3]=l;
-		matrice[3][0]=m;
-		matrice[3][1]=n;
-		matrice[3][2]=o;
-		matrice[3][3]=p;
+	public Matrice(float[][] values){
+		matrice = values;
 	}
 	
 	public void afficher() {
@@ -88,8 +42,8 @@ public class Matrice {
 
 	public String toString() {
 		String s = "";
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
+		for (int i = 0; i < matrice.length; i++) {
+			for (int j = 0; j < matrice.length; j++) {
 				s += matrice[i][j] + " | ";
 			}
 			s += "\n";
@@ -140,17 +94,33 @@ public class Matrice {
 		return matrice;
 
 	}
-
+	
 	public static void main(String[] args) {
 		Matrice ok = new Matrice(3, 3);
 		System.out.println(ok.toString());
 		Matrice ok1 = new Matrice(3, 3);
-		System.out.println();
 		System.out.println(ok1.toString());
 		ok.multiplier(ok1);
-		System.out.println();
-		System.out.println();
 		System.out.println(ok);
 	}
-
+	
+	@Override
+	public boolean equals(Object m) {
+		if(m instanceof Matrice){
+			Matrice m1 = (Matrice) m;
+			if(m1.matrice.length == matrice.length 
+					&& m1.matrice[0].length == matrice[0].length){
+				for(int i =0; i < matrice[0].length;i++){
+					for(int j = 0; j < matrice.length;j++){
+						if(m1.matrice[i][j] != matrice[i][j])
+							return false;
+					}
+					
+				}
+				return true;
+			}
+		}
+	
+		return false;
+	}
 }
