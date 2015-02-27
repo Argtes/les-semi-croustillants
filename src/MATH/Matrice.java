@@ -28,13 +28,6 @@ public class Matrice {
 	}
 	
 	
-	public Matrice(int k){
-		matrice = new float[k][k];
-		
-		for(int i = 0; i < k ; i++)
-			matrice[i][i] = 1;
-	}
-	
 	public Matrice(float[][] values){
 		matrice = values;
 	}

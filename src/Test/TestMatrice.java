@@ -7,7 +7,9 @@ import MATH.Matrice;
 
 public class TestMatrice {
 
-	
+	/**
+	 * test initialisation de matrice un - un
+	 */
 	@Test
 	public void testInitMatUnUn() {
 		Matrice m =new Matrice(new float[][]{
